@@ -1,0 +1,221 @@
+/*common reusable styling*/
+ul li{font-family: arial;font-size: 12px}
+.xl-txt-rd{font-size: 27px;color: rgb(255,0,0)}
+.lg-txt{font-size: 22px;color: rgb(51,51,51)}
+.md-txt,.md-txt-bld,.md-txt-thm,.md-txt-rd{font-size: 15px;color: rgb(51,51,51)}
+.md-txt-bld{font-weight: bold}
+.sm-txt,.sm-txt-bld,.sm-txt-theme{font-size: 12px;color: rgb(51,51,51)}
+.sm-txt-bld{font-weight: bold}
+.md-txt-thm,.sm-txt-theme,.xs-btn-thm,.xs-txt-thm{color: rgb(18,181,138)}
+.xs-btn-txt,.xs-btn-thm,.xs-text-intrtv,.xs-txt,.xs-txt-atntn,.xs-txt-thm{font-size: 10px;color: rgb(51,51,51)}
+.xs-text-intrtv{display: inline-block;border: 1px dotted rgb(230,212,185);color:rgb(122,107,82);background-color: rgb(252,248,229)}
+.xs-txt-atntn,.md-txt-rd{color: rgb(255,0,0)}
+.bg-txt{color:rgb(153,153,153)}
+/*reusable image icons*/
+.row-flight-img{width: 40px;margin-top: 10px;margin-right: 10px}
+.slider-img{width: 40px;}
+/*reusable buttons*/
+.rd-btn{background-color: rgb(255,0,0);color:rgb(255,255,255);}
+.rd-btn:hover{background-color: rgb(189,4,11);color:rgb(255,255,255);}
+.btn.trnprt-btn,.btn.trnprt-btn:hover{background-color: transparent;border:1px solid rgb(18,181,138);color:rgb(18,181,138)}
+/*for top navigation section*/
+.top-nav-section{padding-right: 3em}
+.top-nav-tabs{float: right;border-bottom: none}
+.top-nav-tabs li{background-color: rgb(241,241,241);padding: 3px 21px;border: 1px solid #aaa;border-right: none}
+.top-nav-tabs li:last-child{border-right:1px solid #aaa}
+.top-nav-tabs li:hover{background-color: rgb(255,255,255);cursor: pointer;}
+.top-nav-section .dropdown-menu{margin-top: 2px;min-width: 420px;left:-261px }
+.top-nav-tabs li:hover .caret{color: rgb(255,0,0)}
+.top-nav-section .dropdown-menu{padding: 1em;cursor: default}
+button.btn{color:rgb(255,255,255)}
+button.btn.revert{background-color:rgb(18,181,138);color:rgb(255,255,255)}
+button.btn.revert:hover{background-color:rgb(255,255,255);color:rgb(18,181,138);border:1px solid rgb(18,181,138)}
+.btn-status,.btn-sign-in{border: 1px solid rgb(18,181,138);background: rgb(18,181,138)}
+.btn-status:hover,.btn-sign-in:hover{background: rgb(255,255,255);color: rgb(18,181,138)}
+.dropdown-menu-header{width: 100%;float: left;border-bottom:1px solid rgb(18,181,138);background-color: rgb(235,242,247);border-top-left-radius: 5px;border-top-right-radius: 5px}
+.dropdown-menu-body{width: 100%;float: left}
+.signUp-link{text-transform: uppercase;color:rgb(18,181,138);cursor: pointer}
+.frgt-pwd-txt{color:rgb(18,181,138);cursor: pointer;display: inline-block}
+.login-container,.social-container{padding: 1em 5px}
+.btn-txt-row,.social-btn-row{width: 100%}
+.btn-social,.btn-social:hover{color:rgb(255,255,255);}
+.btn-facebook{background-color: rgb(59,89,152)}
+.btn-google{background-color: rgb(217,77,50)}
+.dropdown-menu-footer{width: 100%;float: left;padding: 1em 0;background-color: rgb(235,242,247);border-bottom-left-radius: 5px;border-bottom-right-radius: 5px}
+/* navbar modification for the hover effect*/
+.main-navSection .navbar-default .navbar-nav > li.dropdown:hover > a, 
+.main-navSection .navbar-default .navbar-nav > li.dropdown:hover > a:hover,
+.main-navSection .navbar-default .navbar-nav > li.dropdown:hover > a:focus {background-color: rgb(231, 231, 231);color: rgb(85, 85, 85);}
+.main-navSection .navbar{margin-bottom: 0}
+.main-navSection li:hover > .dropdown-menu {display: block;}
+.main-navSection .nav > li > a:hover, .nav > li > a:focus{background-color: rgb(255,255,255);color:rgb(255,0,0)}
+.main-navSection .nav > li > a{padding: 10px 12px}
+/***********************************************/
+.main-navSection{padding-top: 2em}
+.company-name .flip-text{display: inline-block;font-size: 12px; transition-property: transform;transition-duration: 1s}
+.company-name:hover{color:rgb(255,0,0)}
+.company-name:hover .flip-text{transform: rotate(-90deg)}
+.company-name,.main-navSection .nav > li > a{font-size:16px;color:rgb(26,26,26)}
+.company-name{font-size: 28px;padding-top: 7px}
+.main-navSection .dropdown-menu > li >a{font-size:14px;color:rgb(26,26,26);transition-property: font-size;transition-duration: .1s}
+.main-navSection .dropdown-menu > li >a:hover{font-size:16px;color:rgb(255,0,0);padding: 3px 18px}
+
+/*flight details filled by user section*/
+.flight-user-details{width: 100%;float:left;background-color: rgb(52,71,85);border:1px solid rgb(52,71,85);border-top:2px solid rgb(255,0,0)}
+.travelFrom,.travelTo{width:40%;float: left}
+.travelFrom span,.travelTo span,.travelType span,.travel-schedule,.travel-passeger{display: block;color:rgb(255,255,255);height: 34px;padding: 7px 10px;font-size: 16px;}
+.travelType{width: 20%;float: left}
+.btn.modify-btn{background-color: transparent;border: 1px solid rgb(255,255,255);color: rgb(18,181,138)}
+.filter-btn,.filter-btn:hover{background-color:rgb(18,181,138);color:rgb(255,255,255)}
+/*modify flight details modal popup*/
+#modifyTravelDetails .modal-header{padding-bottom: 0;border-bottom: 3px solid rgb(18,181,138);background-color: rgb(52,71,85);color: rgb(255,255,255)}
+#modifyTravelDetails .travelType-btns .tripType-btn{border-bottom-left-radius: 0;border-bottom-right-radius: 0;background-color: rgb(255,255,255);color:rgb(52,71,85)}
+.close,.close:hover{color:rgba(255,255,255,1)}
+#modifyTravelDetails .travelType-btns .tripType-btn.active{background-color: rgb(18,181,138);color: rgb(255,255,255);box-shadow:none}
+#modifyTravelDetails .modal-body{float: left;width: 100%;}
+#modifyTravelDetails .modal-body .cityListResult{position: absolute;background-color: rgb(255,255,255);min-width:250px;margin-top:5px;padding:10px;border:1px solid;height:90px;overflow:auto;z-index: 999;border-radius:4px;border: 1px solid rgb(212,222,229)}
+.cityListResult > ul{list-style: none;padding-left: 0}
+.cityListResult > ul > li{padding: 2px 15px;cursor: pointer}
+.cityListResult > ul > li:hover{background-color: rgb(246,249,252)}
+#modifyTravelDetails .traveller-details,#modifyTravelDetails .travel-more-option{width: 100%;float: left;}
+#modifyTravelDetails .input-group-addon{background-color: rgb(18,181,138);color: rgb(255,255,255);font-size: 16px;cursor: pointer;border:none}
+#modifyTravelDetails .more-option-tab{display: block;margin-top: 15px;border-bottom: 1px solid rgb(18,181,138)}
+/*#modifyTravelDetails .btn-search-flight{background-color: rgb(255,0,0);color:rgb(255,255,255)}
+#modifyTravelDetails .btn-search-flight:hover{background-color: rgb(189,4,11)}*/
+#filter-flights{background-color: rgb(255,255,255);width: 100%;float: left;margin-top: 10px}
+/*refine filter styling*/
+.filter-container .filter-search{width: 100%;cursor: pointer}
+.filter-container .filter-search .filter-header,.filter-container .filter-search .filter-range{width: 100%;display: block;text-align: left;padding: 8px 2px}
+.filter-container .filter-search .filter-header{color:rgb(18,181,138)}
+.filter-range .caret{color:rgb(255,0,0)}
+/*restyling the dropdown menu*/
+.filter-container .dropdown-menu{border-top-left-radius: 0;border-top-right-radius: 0;border: 2px solid rgb(52,71,85);border-top: 1px;float: left;padding: 1em}
+/*the triangle pointer css*/
+.pointer-triangle{width: 12px;height: 12px;display: block;border: 2px solid rgb(52,71,85);transform: rotate(45deg);position: absolute;
+    left: 13%;top: -8px;border-right: none;border-bottom: none;background: rgb(255,255,255);}
+.container-tngl{display:none;left:auto;right:15%;top: 186px;}
+.container-tngl.visible{display: block}
+/*************/
+.filter-container .dropdown-menu .range-slider{width: 100%;padding: 1em 0}
+.filter-container .dropdown-menu .price-range{width: 100%;float: left;border-top: 2px solid rgb(52,71,85)}
+.filter-container .dropdown-menu .price-range >.price{width: 50%;float: left;}
+.filter-container .price-range >.price >span{padding: .5em 1em;width: 100%;display: block}
+
+.filter-container .dropdown-menu .time-interval{width:25%;float:left;}
+.filter-container .dropdown-menu .time-interval > span{width:100%;display: block;text-align: center}
+.price-filter .price.low{border-right:2px solid rgb(52,71,85)}
+/*flight search main container*/
+.flight-main-section{width: 100%;float: left;background-color:rgb(235,242,247) }
+/*cheap-N-fast-slider-section*/
+.cheap-N-fast-slider-section .nav-tabs{border:none;margin-top: 1em}
+.cheap-N-fast-slider-section .nav-tabs > li{padding:0 2em 1em 0;cursor: pointer}
+.slider-offer-container {width: 100%;float: left}
+.slider-offer-container .flight-slider{float: left;width: 100%;height: 116px;border:1px solid rgb(157,175,188);border-radius: 3px}
+.flight-slider .slideWrapper{overflow: hidden;float: left}
+.slider-offer-container .left-btn,.slider-offer-container .right-btn{display: block;float: left;width: 20px;height: 112px;background-color: rgb(246,249,252);color: rgb(157,175,188);cursor: pointer;border-radius: 3px}
+.slider-offer-container .flight-slider .glyphicon:before{display: block;margin-top: 50px}
+.slider-offer-container .left-btn{border-top-right-radius: 0;border-bottom-right-radius: 0;border-right:1px solid rgb(157,175,188)}
+.slider-offer-container .right-btn{border-top-left-radius: 0;border-bottom-left-radius: 0}
+.slider-offer-container .flight-slider .flight-slide{border-right:1px solid rgb(157,175,188);float: left;padding: .9em 1em;background-color: rgb(255,255,255);cursor: pointer}
+.flight-slide p{margin-bottom: 3px}
+.cheap-N-fast-slider-section .offer{border:1px dotted rgb(157,175,188);border-radius:3px}
+.cheap-N-fast-slider-section .offer span{width: 100%;display: block;padding: .5em 1em;background-color:rgb(246,249,252)}
+.offer span.codeName{color:rgb(18,181,138);display: inline;font-size: 16px}
+/*  style for small dismiss cross button  */
+.dismiss-btn{display:block;float: right;position: absolute;cursor: pointer}
+
+/*  style for spinner image  */
+.spinnerImage{margin-left: 45%}
+
+/************* flight-result-section **************/
+
+.flight-result-section,.filter-row,.flights-container,.flight-details{width: 100%;float: left}
+.flight-result-section .flight-result-count{margin: 15px 0}
+.flight-result-section .flight-result-count span{display: inline-block;float: left}
+.flight-result-count .nav-tabs > li{padding: 0 1em;cursor: pointer;color:rgb(18,181,138)}
+.flight-result-count .nav-tabs > li:last-child{padding-right: 0}
+.filter-row{padding: .5em 0;background-color: rgb(246,249,252);border-radius:5px;border-bottom-left-radius: 0;border-bottom-right-radius: 0;border:1px solid rgb(212,222,229);border-bottom-width: 3px;font-size: 12px}
+.filter-row div{cursor: pointer}
+.flights-container .flight-details{border:1px solid rgb(212,222,229);background-color: rgb(255,255,255);margin-top: 7px}
+.flights-container .flight-details:hover{box-shadow: 1px 1px 1px 1px rgba(0,0,0,.2)}
+
+/********* styling for each flight rows *********/
+
+.flights-container .depart-time,.flights-container .flight-duration,.flights-container .arrival-time,.flights-container .airline-name,.flights-container .flight-price,.flights-container .flt-bk-btn{width: 100%;float: left}
+.flights-container .flt-bk-btn{padding: 14px 0}
+.flight-details .depart-time > span,.flight-details .flight-duration > span,.flight-details .arrival-time > span,.flight-details .flight-price > span{padding: .3em .3em;width: 100%;display: block;}
+.flights-container .airline-name > img,.flights-container .airline-name > .name-N-code{float: left}
+.flights-container .airline-name > .name-N-code > span,.flights-container .airline-name > .flight-expanded-details > span{width: 100%;display: block}
+.flight-expanded-details > span.availability-message{margin-top: 10px}
+.airline-name .flight-extended-label{padding: 3px;display: inline-block;border: 1px solid rgb(18,181,138);background: rgb(235,242,247);border-radius: 3px;margin-top: 10px;cursor: pointer}
+.flight-details .flight-price > span{width: 100%;display: block}
+
+/*flight extending details */
+
+.flight-details .flight-extended-details{padding: 15px;width: 100%;float: left;border-top:1px solid rgb(212,222,229);background-color:rgb(235,242,247) }
+.flight-extended-details .nav-tabs{border-bottom: none}
+.flight-extended-details .nav-tabs > li{padding: 7px 42px 14px 0;cursor: pointer}
+.flight-extended-details .extandable-view{width: 100%;float:left;padding: 14px 0;background-color: rgb(255,255,255);border-radius:4px;border:1px solid rgb(212,222,229)}
+.extandable-view{display: none;}
+.extandable-view.flight-detail{display: block}
+.extandable-view .brief-detail,.extandable-view .baggage-detail{margin-bottom: 14px;}
+.extandable-view .ext-dep-flight-name-time,.extandable-view .img-ext-flight-detail{width: 100%;float: left;}
+.ext-dep-flight-name-time > span,.ext-arr-flight-name-time > span,.ext-name-code-duration > span{widows: 100%;display: block}
+.img-ext-flight-detail >img{float: left}
+.flight-extended-details .baggage-info{padding-top: 0}
+.extandable-view .baggage-detail{padding: 16px 15px; background-color: rgb(245,248,250);border-bottom:1px solid rgb(212,222,229)}
+.baggage-info .baggage-header{width: 100%;display: block;padding: 10px 0;font-weight: bold;border-bottom:1px solid rgb(212,222,229)}
+.baggage-flight-brief,.baggage-check-in,.baggage-cabin{padding: 14px 0;width: 100%;float: left}
+.baggage-flight-brief > img,.baggage-flight-brief .ext-name-code-duration{float: left}
+.rule-header{display:block;float: left;width: 100%}
+.rule-header >span{display: block;width: 100%;padding: 4px 0;float: left}
+.cancellation-policy > span,.date-change-policy > span{width: 100%;display: block;padding: 5px 0}
+.border-message{border: 1px solid rgb(18,181,138)}
+.other-terms > h5{ background-color: rgb(212,222,229);font-weight: bold;padding: 10px 0}
+.other-terms > p{margin-bottom: 5px}
+.fare-summary-details .fare-details{padding: 10px 14px;border-bottom: 1px solid rgb(212,222,229);}
+.left-col > span,.mid-col > span,.last-col > span{padding: 10px;width: 100%;display: block;}
+.fare-summary-header{font-size: 15px;font-weight: bold}
+
+/*style when the flight details are expanded for a flight*/
+.airline-name .info-expanded{background: rgb(255,0,0);color: rgb(255,255,255)}
+
+/* adding css for the animation */
+.animate-repeat {list-style:none;box-sizing:border-box;}
+
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter,
+.animate-repeat.ng-leave {transition:all linear 0.5s;}
+
+.animate-repeat.ng-leave.ng-leave-active,
+.animate-repeat.ng-move,
+.animate-repeat.ng-enter {opacity:0;max-height:0;}
+
+.animate-repeat.ng-leave,
+.animate-repeat.ng-move.ng-move-active,
+.animate-repeat.ng-enter.ng-enter-active {opacity:1;max-height:30px;}
+/**/
+
+
+/*media queries to make responsive */
+@media screen and (min-width: 768px) and (max-width: 1024px)
+{
+    .main-navSection .nav > li > a{padding:10px 8px}
+    .navbar-right{display: none}
+    .xl-txt-rd{font-size: 20px}
+
+}
+@media screen and (max-width: 767px)
+{
+    .xl-txt-rd{font-size: 13px}
+    .lg-txt{font-size: 13px}
+    .md-txt, .md-txt-bld, .md-txt-thm, .md-txt-rd{font-size: 13px}
+    .company-name, .main-navSection .nav > li > a{color: rgb(255,0,0)}
+    .navbar-toggle{border:1px solid rgb(255,0,0)}
+    .navbar-toggle .icon-bar{background-color: rgb(255,0,0)}
+    .row-flight-img{width:25px}
+    .airline-name .flight-extended-label{margin-top: 5px}
+    .btn.book-btn{padding: 0 12px}
+    .slider-offer-container .flight-slider .flight-slide{padding: .1em 1em}
+    
+}

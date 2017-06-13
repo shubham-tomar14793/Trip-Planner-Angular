@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="stylesheets/lib/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/lib/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/lib/style.css">
+</head>
+<body ng-app="appModule" ng-controller="flightResultController">
+	<div class="container"  >
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 top-nav-section">
+           <ul class="nav nav-tabs top-nav-tabs">
+            <li class="hidden-xs" ng-repeat="list in topNavList">
+                <span class="{{list.iconClass}}"></span>
+                {{list.optionName}}
+            </li>
+            <li class="dropdown">
+                <div class="dropdown-toggle" id="bookingStatus" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Booking Status
+                <span class="caret"></span>
+                </div>
+            <div class="dropdown-menu" aria-labelledby="bookingStatus">
+                <h4 class="text-center">Enter your via reference booking <number></number></h4>
+                <form class="">
+                    <div class="form-group">
+                <label class="sr-only" for="reference-status">reference number:</label>
+                <input type="text" class="form-control" id="referenceId" placeholder="Eg. MNxxxxxxxxxx">
+              </div>
+               <div class="form-group">
+                <label class="sr-only" for="email">Email address:</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter your email">
+              </div>
+               <button class="btn btn-status pull-right">Check Status</button>
+                </form>
+              </div>
+          </li>
+           <li class="dropdown">
+           <div class="dropdown-toggle" id="signIn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sign In
+           <span class="caret"></span>
+           </div>
+            <div class="dropdown-menu" aria-labelledby="signIn">
+    <div class="dropdown-menu-header">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <h4 class="text-center">Customer Login</h4>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 hidden-xs">
+            <h5 class="text-center">No Account? <span class="signUp-link">sign up</span>
+            </h5>
+        </div>
+    </div>
+    <div class="dropdown-menu-body">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 login-container">
+            <form>
+                <div class="form-group">
+    <label class="sr-only" for="email">Email address:</label>
+    <input type="email" class="form-control" id="emailId" placeholder="your email address">
+  </div>
+           <div class="form-group">
+    <label class="sr-only" for="password">password:</label>
+    <input type="password" class="form-control" id="referenceId" placeholder="your password">
+  </div>
+          <div class="btn-txt-row">
+           <button class="btn btn-sign-in pull-left">Sign In</button>
+           <h6 class="pull-right frgt-pwd-txt">forgot Password?</h6>
+           </div>
+            </form>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 social-container">
+            <h5 class="text-center visible-xs">No Account? <span class="signUp-link">sign up</span>
+            </h5>
+            <h5>social network account login</h5>
+            <div class="social-btn-row">
+                <a class="btn btn-block btn-social btn-facebook">
+            <span class="fa fa-facebook"></span> with Facebook
+          </a>
+           <a class="btn btn-block btn-social btn-google">
+            <span class="fa fa-google"></span> with Google
+          </a>
+            </div>
+        </div>
+    </div>
+<div class="dropdown-menu-footer">
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <h5>Are you a via agent?</h5>
+        <button class="btn revert agnt-login">Agent Login</button>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+        <h5>Have a corporate account</h5>
+        <button class="btn revert crprt-login">Corporate Login</button>
+    </div>
+</div>
+  </div>
+       </li>
+        </ul>
+        </div>        
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 main-navSection">
+            <nav class="navbar" role="navigation">
+              <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand company-name" href="#">{{companyHeader.companyHeading[0]}}<span class="flip-text">{{companyHeader.companyHeading[1]}}</span></a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav">
+                    <li ng-repeat="navList in mainNavigationList"><a href="{{navList.linkAddress}}"><i class="{{navList.iconClass}}" aria-hidden="true"></i> {{navList.tabName}}<b class="caret" ng-if="navList.subOption.length>0"></b></a>
+                      <ul class="dropdown-menu" ng-if="navList.subOption.length>0">
+                        <li ng-repeat="option in navList.subOption"><a href="{{option.linkAddress}}">{{option.otionName}}</a></li>
+                      </ul>
+                    </li>                                       
+                  </ul>
+                  <ul class="nav navbar-nav navbar-right">
+      <li><a href="/mailUs"><i class="fa fa-envelope" aria-hidden="true"></i> care@via.com</a></li>
+    </ul>
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.container-fluid -->
+            </nav>
+        </div>        
+	</div>
+    <!--flight details and modification and filter sections-->
+    <div class="flight-user-details">
+        <div class="container">
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                <div class="travelFrom">
+                    <span class="cityCode">{{bookingObject.from}}</span>
+                    <span class="cityName">{{bookingObject.from}}</span>
+                </div>
+                <div class="travelType">
+                    <span><i class="fa fa-fighter-jet" aria-hidden="true"></i></span>
+                    <span ng-if="bookingObject.return=='true'"><i class="fa fa-fighter-jet" aria-hidden="true" style="transform:rotate(180deg)"></i></span>
+                </div>
+                <div class="travelTo">
+                    <span class="cityCode">{{bookingObject.to}}</span>
+                    <span class="cityName">{{bookingObject.to}}</span>
+                      </div>
+            </div>
+            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                <div class=" travel-schedule">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+                <span class="travel-direction">onwards</span>
+                <span class="travel-date">{{bookingObject.onwardsDate}}</span>
+                </div>
+                <div class=" travel-schedule" ng-if="bookingObject.return=='true'">
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+                <span class="travel-direction">return</span>
+                <span class="travel-date">Wed,Mar 08 2017</span>
+                </div>
+                <span class="travel-passeger">
+                {{bookingObject.passenger[0].adults}} Adults {{bookingObject.passenger[1].children}} Children {{bookingObject.passenger[2].Infants}} Infants
+                </span>
+            </div>
+            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                <button class="btn btn-block modify-btn" data-toggle="modal" data-target="#modifyTravelDetails">Modify</button>
+                <button class="btn btn-block filter-btn"><i class="fa fa-filter" aria-hidden="true"></i> Refine <span class="hidden-sm">Search</span></button> 
+            </div>
+            <div id="modifyTravelDetails" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title text-center">Modify Your Search</h4>
+        <div class="travelType-btns">
+            <button class="btn tripType-btn active">One Way</button>
+            <button class="btn tripType-btn">Round trip</button>
+            <button class="btn tripType-btn">Multi-city</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+    <label for="fromCity">FROM</label>    
+    <input type="text" class="form-control" id="fromCity" ng-model="modifiedBookingObject.from" value="modifiedBookingObject.from" ng-click="suggestionBoxFrom='false'">
+    <div class="cityListResult from" ng-if="modifiedBookingObject.from.length>2 && suggestionBoxFrom=='false'">
+        
+        <ul>
+            <li class="md-txt" ng-repeat="city in cityList | filter:modifiedBookingObject.from" ng-click="selectAndCloseFrom(city.name)">{{city.name}}</li>
+        </ul>
+    </div>   
+  </div>
+       <div class="form-group">
+    <label for="departureDate">DEPARTURE</label>
+    <input type="date" class="form-control" id="departureDate" ng-model="modifiedBookingObject.onwardsDate">
+  </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="form-group">
+    <label for="toCity">To</label>
+    <input type="text" class="form-control" id="toCity" ng-model="modifiedBookingObject.to" value="{{modifiedBookingObject.to}}" ng-click="suggestionBoxTo='false'">
+    <div class="cityListResult" ng-if="modifiedBookingObject.to.length>2 && suggestionBoxTo=='false'">
+        <ul>
+            <li class="md-txt" ng-repeat="city in cityList | filter:modifiedBookingObject.to" ng-click="selectAndCloseTo(city.name)">{{city.name}}</li>
+        </ul>
+    </div>
+  </div>
+       <div class="form-group">
+    <label for="returnDate">RETURN</label>
+    <input type="date" class="form-control" id="returnDate" ng-model="modifiedBookingObject.returnDate">
+  </div>
+        </div>
+        <div class="traveller-details">
+           <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+              <h6>Adults (12+ years)</h6>
+               <div class="input-group">
+  <span class="input-group-addon" ng-click="modifiedBookingObject.passenger.adults=modifiedBookingObject.passenger.adults-1">-</span>
+  <input type="text" class="form-control" ng-init="modifiedBookingObject.passenger.adults=1" value="{{modifiedBookingObject.passenger.adults}}" aria-label="no of adults" ng-model="modifiedBookingObject.passenger.adults">
+  <span class="input-group-addon" ng-click="modifiedBookingObject.passenger.adults=modifiedBookingObject.passenger.adults+1">+</span>
+</div>
+            </div> 
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+              <h6>Children (0 - 12 years)</h6>
+               <div class="input-group">
+  <span class="input-group-addon" ng-click="modifiedBookingObject.passenger.children=modifiedBookingObject.passenger.children-1">-</span>
+  <input type="text" class="form-control" aria-label="no of children" ng-init="modifiedBookingObject.passenger.children=0" value="{{modifiedBookingObject.passenger.children}}" ng-model="modifiedBookingObject.passenger.children">
+  <span class="input-group-addon" ng-click="modifiedBookingObject.passenger.children=modifiedBookingObject.passenger.children+1">+</span>
+</div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+              <h6>Infants (0 - 2 years)</h6>
+               <div class="input-group">
+  <span class="input-group-addon" ng-click="modifiedBookingObject.passenger.infants=modifiedBookingObject.passenger.infants-1">-</span>
+  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" ng-init="modifiedBookingObject.passenger.infants=0" value="{{modifiedBookingObject.passenger.infants}}" ng-model="modifiedBookingObject.passenger.infants">
+  <span class="input-group-addon" ng-click="modifiedBookingObject.passenger.infants=modifiedBookingObject.passenger.infants+1">+</span>
+</div>
+            </div> 
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 travel-more-option">
+            <span class="more-option-tab" data-toggle="collapse" data-target="#more-options"><span class="caret"></span> Show more options</span>
+            <div id="more-options" class="collapse">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+              <h6>Preferred Airline</h6>
+               <div class="form-group">    
+    <input type="text" class="form-control" id="pref-airline" ng-model="modifiedBookingObject.airline" ng-click="suggestionBoxFlight='false'" value="{{modifiedBookingObject.airline}}">
+    <div class="cityListResult" ng-if="modifiedBookingObject.airline.length>2 && suggestionBoxFlight=='false'">
+        <ul>
+            <li class="md-txt" ng-repeat="flight in flightList | filter:modifiedBookingObject.airline" ng-click="selectAndCloseFlight(flight.flightName)">{{flight.flightName}}</li>
+        </ul>
+    </div>
+  </div>
+            </div> 
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+              <h6>Class</h6>
+               <div class="form-group">    
+    <select class="form-control" id="sel1">
+    <option>All</option>
+    <option>Economy</option>
+    <option>Business</option>
+    <option>Premium Economy</option>
+  </select>
+  </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+              <h6>Routing</h6>
+               <div class="form-group">    
+    <select class="form-control" id="sel1">
+    <option>All</option>
+    <option>Direct Flights</option>
+    <option>Nonstop Direct Flights</option>
+    <option>Single Connecting</option>
+  </select>
+  </div>
+            </div>
+            </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn rd-btn" data-dismiss="modal" ng-click="getModifiedData()">Search Flights</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+       
+        </div> 
+        <span class="virtualClick" data-toggle="collapse" data-target="#filter-flights"></span>
+        <span class="pointer-triangle container-tngl"></span>
+        <div id="filter-flights" class="collapse filter-container" style="border:1px solid">
+         <div class="container">         
+          <div class="col-lg-2 col-md-2 col-md-4 col-xs-6">
+              <div class="filter-search price-filter dropdown">
+                  <span class="filter-header">
+                  <i class="fa fa-inr inr-circle" aria-hidden="true"></i>
+                   Price
+                  </span>
+                  <span class="filter-range dropdown-toggle" data-toggle="dropdown">
+                     <span class="lower-range">
+                     <i class="fa fa-inr" aria-hidden="true"></i>
+                      2,902
+                     </span>
+                     <span class="upper-range">
+                     <i class="fa fa-inr" aria-hidden="true"></i>
+                      2,902
+                     </span>
+                     <span class="caret"></span>
+                  </span>
+                  <!--dropdown-->
+                  <div class="dropdown-menu" style="min-width:320px;padding:0">
+                      <span class="pointer-triangle"></span>
+                      <div class="range-slider"></div>
+                      <div class="price-range">
+                          <div class="price low">
+                              <span class="price-label">Min. Price</span>
+                              <span class="price-value"><i class="fa fa-inr" aria-hidden="true"></i> 2,902</span>
+                          </div>
+                          <div class="price high">
+                              <span class="price-label">Max. Price</span>
+                              <span class="price-value"><i class="fa fa-inr" aria-hidden="true"></i> 2,902</span>
+                          </div>
+                      </div>
+                    </div>
+              </div>
+          </div>
+          <div class="col-lg-2 col-md-2 col-md-4 col-xs-6">
+              <div class="filter-search place-filter dropdown">
+              <span class="filter-header">
+              <i class="fa fa-map-marker map-circle" aria-hidden="true"></i>
+               Stops
+              </span>
+              <span class="filter-range dropdown-toggle" data-toggle="dropdown">
+                 <span class="stop-count">
+                 0, 1, 2, 3+ Stops
+                 </span>
+                 <span class="caret"></span>
+              </span>
+              <!--dropdown-->
+              <div class="dropdown-menu">
+              <span class="pointer-triangle"></span>
+    <div class="checkbox">
+  <label><input type="checkbox" value="">0 Stops</label>
+</div>
+   <div class="checkbox">
+  <label><input type="checkbox" value="">1 Stops</label>
+</div>
+        <div class="checkbox">
+  <label><input type="checkbox" value="">2 Stops</label>
+</div>
+        <div class="checkbox">
+  <label><input type="checkbox" value="">3+ Stops</label>
+</div>
+  </div>
+              </div>
+          </div>
+          <div class="col-lg-2 col-md-2 col-md-4 col-xs-6">
+              <div class="filter-search time-filter dropdown">
+                  <span class="filter-header">
+                      <i class="fa fa-clock-o" aria-hidden="true"></i>Times
+                  </span>
+                  <span class="filter-range dropdown-toggle" data-toggle="dropdown">
+                      All Times      
+                  <span class="caret"></span>
+                  </span>
+                  <!--dropdown-->
+                  <div class="dropdown-menu" style="min-width:420px">
+                      <span class="pointer-triangle"></span>
+                      <h6>Onward</h6>
+                          <p>Take Off : Bangalore</p>
+                          <div class="time-interval">
+                              <span>
+                                  <i class="fa fa-coffee" aria-hidden="true"></i>
+                              </span>
+                              <span>
+                                  Before 10:00
+                              </span>
+                          </div>
+                          <div class="time-interval">
+                              <span>
+                                  <i class="fa fa-sun-o" aria-hidden="true"></i>
+                              </span>
+                              <span>
+                                  10:00 to 15:00
+                              </span>
+                          </div>
+                          <div class="time-interval">
+                              <span>
+                                  <i class="fa fa-coffee" aria-hidden="true"></i>
+                              </span>
+                              <span>
+                                  15:00 to 20:00
+                              </span>
+                          </div>
+                          <div class="time-interval">
+                              <span>
+                                  <i class="fa fa-moon-o" aria-hidden="true"></i>
+                              </span>
+                              <span>
+                                  20:00 to 00:00
+                              </span>
+                          </div>
+                          <p>Arrival : Delhi</p>
+                          <div class="time-interval">
+                              <span>
+                                  <i class="fa fa-coffee" aria-hidden="true"></i>
+                              </span>
+                              <span>
+                                  Before 10:00
+                              </span>
+                          </div>
+                          <div class="time-interval">
+                              <span>
+                                  <i class="fa fa-sun-o" aria-hidden="true"></i>
+                              </span>
+                              <span>
+                                  10:00 to 15:00
+                              </span>
+                          </div>
+                          <div class="time-interval">
+                              <span>
+                                  <i class="fa fa-coffee" aria-hidden="true"></i>
+                              </span>
+                              <span>
+                                  15:00 to 20:00
+                              </span>
+                          </div>
+                          <div class="time-interval">
+                              <span>
+                                  <i class="fa fa-moon-o" aria-hidden="true"></i>
+                              </span>
+                              <span>
+                                  20:00 to 00:00
+                              </span>
+                          </div>
+                  </div>
+            </div>
+        </div>
+          <div class="col-lg-2 col-md-2 col-md-4 col-xs-6">
+              <div class="filter-search airline-filter dropdown" >
+              <span class="filter-header">
+              <i class="fa fa-fighter-jet jet-circle" aria-hidden="true"></i>
+               Airlines
+              </span>
+              <span class="filter-range  dropdown-toggle" data-toggle="dropdown">
+              All Airlines
+              <span class="caret"></span>      
+              </span>
+              <!--dropdown-->
+              <div class="dropdown-menu">
+              <span class="pointer-triangle"></span>
+              <div class="checkbox">
+  <label><input type="checkbox" value="">Select All</label>
+</div>
+   <div class="checkbox">
+  <label><input type="checkbox" value="">Indigo</label>
+</div>
+        <div class="checkbox">
+  <label><input type="checkbox" value="">GoAir</label>
+</div>
+        <div class="checkbox">
+  <label><input type="checkbox" value="">JetAirways</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">AirIndia</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">Vistara</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">AirAsia India</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">SpiceJet</label>
+</div>    
+  </div>
+              </div>
+          </div>
+          <div class="col-lg-2 col-md-2 col-md-4 col-xs-6">
+              <div class="filter-search itinery-filter dropdown">
+              <span class="filter-header">
+              <i class="fa fa-star star-circle" aria-hidden="true"></i>
+               Itineries
+              </span>
+              <span class="filter-range dropdown-toggle" data-toggle="dropdown">
+              All Itineries
+              <span class="caret"></span> 
+              </span>
+              <!--dropdown-->
+              <div class="dropdown-menu">
+              <span class="pointer-triangle"></span>
+    <div class="checkbox">
+  <label><input type="checkbox" value="">Baggage Included</label>
+</div>
+ <div class="checkbox">
+  <label><input type="checkbox" value="">Meals Available</label>
+</div> 
+  </div>
+              </div>
+          </div>
+          <div class="col-lg-2 col-md-2 col-md-4 col-xs-6">
+             <div class="filter-search clear-filter">
+              <span class="filter-header">
+              <i class="fa fa-repeat" aria-hidden="true"></i>
+                Clear Filters
+              </span>                    
+              </div> 
+          </div>
+        </div>
+       </div>       
+    </div>
+    <!--sections ends-->
+    <!--cheap and fastest section-->
+    <div class="flight-main-section">
+        <div class="cheap-N-fast-slider-section">
+           <div class="container">
+               <div class="col-lg-12 col-md-12 col-sm-12">
+                <ul class="nav nav-tabs">
+                    <li class="" ng-click="priceOrder='cost'">
+                        <span>Cheapest Flights</span>
+                    </li>
+                    <li class="" ng-click="priceOrder='duration'">
+                        <span>Fastest Flights</span>
+                    </li>
+                </ul>
+               </div>
+                <div class="slider-offer-container">
+                    <div class="col-lg-8 col-md-8 col-sm-7">
+                        <div ng-if="!dataLoaded">
+                            <img src="images/spinner/loading.gif" class="spinnerImage">
+                        </div>
+                        <div ng-if="dataLoaded">
+                          <slider-directive></slider-directive>                   
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-5 hidden-xs">
+                        <div class="offer">
+                            <span>Get upto  400 Off* on Domestic Flight</span>
+                            <span>Use code: <span class="codeName">VIADOM</span></span>
+                            <span><a href="#">Terms Apply</a></span>
+                        </div>
+
+                   </div>
+                </div>
+            </div>
+        </div>
+    <div class="flight-result-section">
+        <div class="container">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 flight-result-count">
+                <span>{{flightResult.length}} Flight Results</span>
+                <ul class="nav nav-tabs pull-right">
+                    <li>Previous Day</li>
+                    <li>Next Day</li>
+                </ul>
+            </div>
+            <div class="filter-row">
+                <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                    <div class="depart-time">
+                    <span class="caret"></span>
+                    <span>Depart</span>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-2 hidden-sm hidden-xs">
+                   <div class="flight-duration" ng-click="filghtResultOrderBy='duration'">
+                    <span class="caret"></span>
+                    <span>Duration</span>
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                   <div class="arrival-time" ng-click="filghtResultOrderBy='arrival'">
+                    <span class="caret"></span>
+                    <span>Arrival</span>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-4 col-sm-5 col-xs-6">
+                    <div class="airline-name" ng-click="filghtResultOrderBy='airline'">
+                    <span class="caret"></span>
+                    <span>Airlines</span>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-3 col-xs-2">
+                    <div class="flight-price" ng-click="filghtResultOrderBy='cost'">
+                    <span class="caret"></span>
+                    <span>Price-low</span>
+                    </div>
+                </div>
+                <div class="col-lg-1 col-md-1 hidden-sm hidden-xs">
+                    &nbsp;
+                </div>
+            </div>
+            <div ng-if="!dataLoaded">
+                <img src="images/spinner/loading.gif" class="spinnerImage">
+            </div>
+            <div ng-if="dataLoaded">  
+                <flight-result-directive></flight-result-directive>              
+            </div>
+        </div>
+    </div>
+    </div>
+    <!--sections ends-->
+	<script type="text/javascript" src="javascripts/lib/jquery.js"></script>
+	<script type="text/javascript" src="javascripts/custom/custom-changes.js"></script>
+	<script type="text/javascript" src="javascripts/lib/bootstrap.js"></script>
+	<script type="text/javascript" src="javascripts/ng/angular.js"></script>
+	<script type="text/javascript" src="javascripts/ng/angular-route.js"></script>
+	<script type="text/javascript" src="javascripts/ng/angular-animate.min.js"></script>
+	<script type="text/javascript" src="javascripts/ng/angular-aria.min.js"></script>
+	<!-- angular module controller and services -->
+	<script type="text/javascript" src="javascripts/app-module.js"></script>	
+	<script type="text/javascript" src="javascripts/controllers/flight-result-controller.js"></script>
+	<script type="text/javascript" src="javascripts/services/flight-result-service.js"></script>
+	
+	<script type="text/javascript" src="javascripts/directives/slider-directive.js"></script>
+	<script type="text/javascript" src="javascripts/directives/flight-result-directive.js"></script>
+	<script type="text/javascript" src="javascripts/directives/flight-event-directive.js"></script>
+</body>
+</html>

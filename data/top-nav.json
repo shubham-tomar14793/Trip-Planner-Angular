@@ -1,0 +1,18 @@
+{
+	"topNavList": [{
+		"optionName": "Switch to old website",
+        "iconClass": "glyphicon glyphicon-transfer"
+	},
+    {
+		"optionName": "Download App",
+        "iconClass": "glyphicon glyphicon-phone"
+	},
+    {
+		"optionName": "Deals",
+        "iconClass": "glyphicon glyphicon-tag"
+	},
+    {
+		"optionName": "Support",
+        "iconClass": "glyphicon glyphicon-help"
+	}]
+}

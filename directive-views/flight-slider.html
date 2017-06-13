@@ -1,0 +1,15 @@
+<div class="flight-slider">
+    <span class="glyphicon glyphicon-chevron-left  left-btn" onclick="previousFlight()"></span>
+    <div class="slideWrapper">
+       <div class="slide-container">
+            <div class="flight-slide" ng-repeat="flightItem in sliderItemList | orderBy : priceOrder">
+                <p>{{flightItem.airline}}</p>
+                <p>
+                    <img class="slider-img" src="images/flight-icons/{{flightItem.airline}}.gif">
+                </p>
+                <p><i class="fa fa-inr" aria-hidden="true"></i> {{flightItem.cost}}</p>
+            </div>
+        </div>
+    </div>   
+    <span class="glyphicon glyphicon-chevron-right right-btn" onclick="nextFlight()"></span>
+</div>

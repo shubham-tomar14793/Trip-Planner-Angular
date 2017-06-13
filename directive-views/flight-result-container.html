@@ -1,0 +1,185 @@
+<div class="flights-container">
+                    <div class="flight-details animate-repeat" ng-repeat="flight in flightResult | orderBy : filghtResultOrderBy">
+                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+                           <div class="depart-time">
+                            <span class="lg-txt">{{flight.departure}}</span>
+                            <span class="sm-txt">{{flight.from}}</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-2 hidden-sm hidden-xs">
+                           <div class="flight-duration">
+                            <span class="md-txt">{{flight.duration}}h<span class="xs-txt">Non-Stop</span></span>
+                            <span class="xs-txt">{{flight.from}}->{{flight.to}}</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-2 col-xs-2">
+                           <div class="arrival-time">
+                            <span class="lg-txt">{{flight.arrival}}</span>
+                            <span class="sm-txt">{{flight.to}}</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-sm-5 col-xs-6">
+                           <div class="airline-name">
+                           <img class="row-flight-img" src="images/flight-icons/{{flight.airline}}.gif">
+                            <div class="name-N-code">                      
+                              <span class="flight-name md-txt-bld">{{flight.airline}}</span>
+                               <span class="filght-code sm-txt-theme">{{flight.flight_number}}</span>
+                               <span class="additional-message xs-txt-atntn">* Hand Baggage Only</span>
+                            </div>
+                            <div class="flight-expanded-details pull-right">
+                               <span class="availability-message xs-text-intrtv"><i class="fa fa-user" aria-hidden="true"></i> 1 seat left</span>
+                                <span click-bind class="flight-extended-label xs-btn-thm" data-toggle="collapse" data-target="#{{flight.flight_number}}"><i class="fa fa-list" aria-hidden="true"></i>Flight Details</span>                                
+                            </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-3 col-xs-2">
+                           <div class="flight-price">
+                            <span class="xl-txt-rd"><i class="fa fa-inr" aria-hidden="true"></i> {{flight.cost}}</span>
+                            <button class="btn rd-btn book-btn visible-xs visible-sm">Book</button>
+                            </div>
+                        </div>
+                        <div class="col-lg-1 col-md-1 hidden-sm hidden-xs">
+                           <div class="flt-bk-btn">
+                            <button class="btn rd-btn book-btn">Book</button>
+                            </div>
+                        </div>
+                        <div class="flight-extended-details collapse" id="{{flight.flight_number}}">
+                           <ul class="nav nav-tabs md-txt-thm">
+                               <li class="nav-item" data-target="flight-detail" onclick="additionalInfo(this)">
+                                   <i class="fa fa-fighter-jet" aria-hidden="true" style="transform:rotate(-90deg)"></i> Flight Details
+                               </li>
+                               <li class="nav-item" data-target="baggage-info" onclick="additionalInfo(this)">
+                                   <i class="fa fa-briefcase" aria-hidden="true"></i> Baggage Information
+                               </li>
+                               <li class="nav-item" data-target="flight-rules" onclick="additionalInfo(this)">
+                                   <i class="fa fa-exclamation-circle" aria-hidden="true"></i> Fare Rules
+                               </li>
+                               <li class="nav-item" data-target="fare-summary-details" onclick="additionalInfo(this)">
+                               <i class="fa fa-inr" aria-hidden="true"></i> Fare Details
+                               </li>
+                           </ul>
+                           <!--flight details flight-detail view-->
+                            <div class="extandable-view flight-detail">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 brief-detail">
+                                   <i class="fa fa-fighter-jet bg-txt" aria-hidden="true"></i> 
+                                    <span class="md-txt-bld">{{flight.from}}->{{flight.to}}</span>
+                                    8 Mar 2017 | {{flight.duration}} 
+                                    <span class="sm-txt bg-txt">0 Stops</span>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                    <div class="ext-dep-flight-name-time">
+                                        <span class="md-txt-bld">{{flight.from}} <span class="sm-txt">{{flight.from}}</span></span>
+                                        <span class="sm-txt">India</span>
+                                        <span class="lg-txt">{{flight.departure}}</span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                   <div class="img-ext-flight-detail">
+                                    <img class="row-flight-img" src="images/flight-icons/indiGo.gif" />
+                                    <div class="ext-name-code-duration">
+                                        <span class="md-txt-bld">{{flight.airline}}</span>
+                                        <span class="sm-txt-theme">{{flight.flight_number}}</span>
+                                        <span class="md-txt-rd">{{flight.duration}} hours</span>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                    <div class="ext-arr-flight-name-time">
+                                        <span class="md-txt-bld">{{flight.to}} <span class="sm-txt">{{flight.to}}</span></span>
+                                        <span class="sm-txt">India</span>
+                                        <span class="lg-txt">{{flight.arrival}}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--flight details baggage-info view-->
+                            <div class="extandable-view baggage-info">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 baggage-detail">
+                                   <i class="fa fa-fighter-jet md-txt bg-txt" aria-hidden="true"></i> 
+                                     <span class="md-txt-bld">{{flight.from}}->{{flight.to}}</span> | Baggage Information
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                   <span class="baggage-header">Airline</span>
+                                    <div class="baggage-flight-brief">
+                                    <img class="row-flight-img" src="images/flight-icons/indiGo.gif" />
+                                    <div class="ext-name-code-duration">
+                                        <span class="md-txt-bld">{{flight.airline}}</span>
+                                        <span class="sm-txt-theme">{{flight.flight_number}}</span>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                  <span class="baggage-header">Check In</span>
+                                   <div class="baggage-check-in">
+                                        <span>Adult: <span class="md-txt-bld">0 kg baggage</span></span>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                   <span class="baggage-header">Cabin Baggage</span>
+                                    <div class="baggage-cabin">
+                                        <span>Adult: <span class="md-txt-bld">7 Kg</span></span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--flight details flight-rules view-->
+                            <div class="extandable-view flight-rules">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rule-header-btn">
+                                   <button class="btn trnprt-btn sm-txt">
+                                   BLR
+                                   <i class="fa fa-fighter-jet" aria-hidden="true"></i>
+                                   DEL
+                                   </button>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 rule-header">
+                                  <span class="md-txt-bld"><i class="fa fa-exclamation-circle" aria-hidden="true"></i> Fare Rules: BLR <i class="fa fa-fighter-jet" aria-hidden="true"></i> DEL
+                                  <button class="btn trnprt-btn sm-txt pull-right">Refundable</button>
+                                  </span>
+                                   <span class="sm-txt-thm">* The below Fare Rules are just a guideline for your convenience and is subject to changes by the Airline from time to time.</span>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12
+                                   cancellation-policy">
+                                    <span><span class="md-txt-bld">Cancellation Fee</span> (Per Passenger)</span>
+                                    <span class="border-message sm-txt-bld">Cancellation Fee Amount <i class="fa fa-inr" aria-hidden="true"></i> 2250</span>
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12
+                                   date-change-policy">
+                                    <span><span class="md-txt-bld">Date Change Fee</span> (Per Passenger)</span>
+                                    <span class="border-message sm-txt-bld">Date Change Amount <i class="fa fa-inr" aria-hidden="true"></i> 2250</span>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 other-terms">
+                                <h5>Other Terms</h5>
+                                <p class="sm-txt">*Changes/cancellations are subject to 4 hrs prior to departure.</p>
+                                <p class="sm-txt">*The charges are per passenger per sector.</p>
+                                <p class="sm-txt">*Partial cancellation is not allowed on tickets booked under special discounted fares.</p>
+                                <p class="sm-txt">*Partial cancellations/ PNR Divide is not allowed for Family & Friend(FnF) fare.</p>
+                                <p class="sm-txt">*In case of no-show or ticket not cancelled within the stipulated time</p>
+                                <p class="sm-txt">only statutory taxes are refundable.</p>
+                                <p class="sm-txt">*The above Fare Rules are just a guideline for your convenience and is subject to changes by the Airline from time to time.</p>
+                                </div>
+                            
+                        </div>
+                            <!--flight details flight-rules view-->
+                            <div class="extandable-view fare-summary-details">
+                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 fare-details">
+                                Fare Details
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 left-col">
+                            <span class="fare-summary-header">Type</span>
+                            <span>Adult (s)</span>
+                            <span>Other Amount</span>
+                            <span class="md-txt-bld">Total Amount</span>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 mid-col">
+                            <span class="fare-summary-header">Fare ( <i class="fa fa-inr" aria-hidden="true"></i> )</span>
+                            <span>1,039   x   1</span>
+                            <span>1,863</span>                            
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 last-col">
+                            <span class="fare-summary-header">Total ( <i class="fa fa-inr" aria-hidden="true"></i> )</span>
+                            <span>1,039</span>
+                            <span>1,863</span>
+                            <span class="xl-txt-rd"><i class="fa fa-inr" aria-hidden="true"></i> 2,902</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>

@@ -1,0 +1,72 @@
+{
+	"mainNavigationList": {
+		"companyHeader": {
+			"companyHeading": [
+				"Via",
+				".com"
+			]
+		},
+		"navListItems": [{
+			"tabName": "Flights",
+			"iconClass": "fa fa-plane",
+            "linkAddress":"/flights",
+            "subOption" : []
+		}, {
+			"tabName": "Hotels",
+			"iconClass": "fa fa-bed",
+            "linkAddress":"/hotels",
+            "subOption" : []
+		}, {
+			"tabName": "Flight+Hotels",
+			"iconClass": "fa fa-plane fa-bed",
+            "linkAddress":"/flightsAndHotels",
+            "subOption" : []
+		}, {
+			"tabName": "Holidays",
+			"iconClass": "fa fa-camera",
+            "linkAddress":"#",
+            "subOption" : [
+                {
+                    "otionName" : "Holiday Packages",
+                    "linkAddress" : "/holidayPackage"
+                },
+                {
+                    "otionName" : "Flight + Holiday Packages",
+                    "linkAddress" : "/flightNholidayPackages"
+                }
+            ]
+		}, {
+			"tabName": "Bus",
+			"iconClass": "fa fa-bus",
+            "linkAddress":"#",
+            "subOption" : [
+                {
+                    "otionName" : "Bus Packages",
+                    "linkAddress" : "/busPackages"
+                }
+            ]
+		}, {
+			"tabName": "Cars",
+			"iconClass": "fa fa-car",
+            "linkAddress":"#",
+            "subOption" : [
+                {
+                    "otionName" : "OutStation",
+                    "linkAddress" : "/outstation"
+                },
+                {
+                    "otionName" : "Local Use",
+                    "linkAddress" : "/localUse"
+                },
+                {
+                    "otionName" : "Transfers",
+                    "linkAddress" : "/transfers"
+                },
+                {
+                    "otionName" : "Car Packages",
+                    "linkAddress" : "/carPackages"
+                }
+            ]
+		}]
+	}
+}
